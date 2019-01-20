@@ -24,7 +24,7 @@
             android:layout_height="48dp"
 
             android:scaleType="centerCrop"
-            android:src="@drawable/icon_girl" />
+            android:src="@drawable/icon_micro_game_comment" />
 
         <ImageView
             android:id="@+id/robot_notice"

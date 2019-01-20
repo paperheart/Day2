@@ -82,4 +82,7 @@ public class CircleImageView extends AppCompatImageView {
         initSrcRectF();
     }
 
+    public void setCircleImage() {
+
+    }
 }

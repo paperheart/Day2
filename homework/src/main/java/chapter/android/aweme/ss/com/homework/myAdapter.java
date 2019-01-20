@@ -1,5 +1,6 @@
 package chapter.android.aweme.ss.com.homework;
 
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.security.cert.Extension;
 import java.util.List;
 
 import chapter.android.aweme.ss.com.homework.model.Message;
@@ -20,15 +22,13 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.VIEW_HOLDER> {
     {
         mData=data;
     }
-
-
     @NonNull
     @Override
     public VIEW_HOLDER onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view =  LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.my_item,viewGroup,false);
-        VIEW_HOLDER viewhoder = new VIEW_HOLDER(view);
+        VIEW_HOLDER view_Hoder = new VIEW_HOLDER(view);
         Log.d("Text","onCreat");
-        return viewhoder;
+        return view_Hoder;
     }
 
     @Override
@@ -37,17 +37,15 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.VIEW_HOLDER> {
         VIEW_HOLDER.updateUI(message);
         Log.d("Text","onBind");
     }
-
     @Override
     public int getItemCount() {
-        return 5;
+        return 30;
     }
-
     public static class VIEW_HOLDER extends RecyclerView.ViewHolder implements View.OnClickListener {
         private static TextView hp_name;
         private static TextView hp_message;
         private static TextView hp_time;
-        private chapter.android.aweme.ss.com.homework.widget.CircleImageView hp_icon;
+        private static chapter.android.aweme.ss.com.homework.widget.CircleImageView hp_icon;
 
         public VIEW_HOLDER(@NonNull View itemView) {
             super(itemView);
@@ -62,11 +60,13 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.VIEW_HOLDER> {
             hp_name.setText(message.getTitle());
             hp_message.setText(message.getDescription());
             hp_time.setText(message.getTime());
+            hp_icon.setImageResource(message.getIcon());
 
         }
 
         @Override
         public void onClick(View v) {
+
 
         }
     }

@@ -17,13 +17,11 @@ import chapter.android.aweme.ss.com.homework.model.PullParser;
  * 大作业:实现一个抖音消息页面,所需资源已放在res下面
  */
 public class Exercises3 extends AppCompatActivity  {
-
-    private RecyclerView List;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate  (savedInstanceState);
         setContentView(R.layout.activity_recycleview);
-        List = findViewById(R.id.Recycle_view);
+        RecyclerView List = findViewById(R.id.Recycle_view);
         LinearLayoutManager LLManager = new LinearLayoutManager(this);
         LLManager.setOrientation(LinearLayoutManager.VERTICAL);
         List.setLayoutManager(LLManager);
@@ -41,6 +39,7 @@ public class Exercises3 extends AppCompatActivity  {
         myAdapter mAdapter;
         mAdapter = new myAdapter(messages);
         List.setAdapter(mAdapter);
+        Log.d("Text","try");
     }
 
 }
